@@ -14,6 +14,7 @@ pipeline {
                     ls -lah
                 '''
                 sh 'mvn --version'
+                sh 'apk add --no-cache make'
                 sh 'make hello'
             }
         }
