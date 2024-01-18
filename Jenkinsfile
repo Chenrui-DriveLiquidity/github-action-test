@@ -2,7 +2,7 @@ pipeline {
     agent { 
         docker { 
             image 'maven:3.9.6-eclipse-temurin-21-alpine' 
-            args '--platform linux/arm64'
+            args '--platform linux/arm64 -u root'
         } 
     }
     stages {
@@ -14,6 +14,7 @@ pipeline {
                     ls -lah
                 '''
                 sh 'mvn --version'
+                sh 'apk add --no-cache make'
                 sh 'make hello'
             }
         }
