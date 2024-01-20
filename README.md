@@ -1,3 +1,3 @@
 # github-action-test
 temporary repository to test github action
-test pr to triggering jenkins pipeline
+test pr which triggers jenkins pipeline
