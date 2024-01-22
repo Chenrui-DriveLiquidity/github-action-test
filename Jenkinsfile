@@ -18,5 +18,24 @@ pipeline {
                 sh 'make hello'
             }
         }
+
+        stage('Build Project 1') {
+            when {
+                changeset "**/project_1/**"
+            }
+            steps {
+                sh 'echo "Build Project 1"'
+                sh 'cd project_1 && make hello'
+            }
+        }
+        stage('Build Project 2') {
+            when {
+                changeset "**/project_2/**"
+            }
+            steps {
+                sh 'echo "Build Project 2"'
+                sh 'cd project_2 && make hello'
+            }
+        }
     }
 }
